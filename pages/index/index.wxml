@@ -1,28 +1,17 @@
+<!--index.wxml-->
 <view class="container">
-  <view class="page-body">
-    <view class="page-section">
-      <view class="page-body-info">
-        <block wx:if="{{imageSrc}}">
-          <view class="weui-uploader__files">
-            <view class="weui-uploader__file">
-              <image class="weui-uploader__img" src="{{imageSrc}}"></image>
-            </view>
-          </view>
-        </block>
-        <block wx:else>
-          <view class="image-plus image-plus-nb" bindtap="chooseImage">
-            <view class="image-plus-horizontal"></view>
-            <view class="image-plus-vertical"></view>
-          </view>
-          <view class="image-plus-text">选择图片</view>
-        </block>
-      </view>
-      <view class="body-view">
-        <button type="default" bindtap="check">检测</button>
-      </view>
-      <view class="body-view">
-        <button type="default" bindtap="reload">重置</button>
-      </view>
-    </view>
+  <view class='imagesize'>
+    <image src='{{userImage}}' mode="widthFix" bindtap='clickImg'></image>
+  </view>
+  <!--<view class='res_imagesize' mode="widthFix" wx:if="{{condition}}">
+      <image src= "{{resurl}}"></image>
+  </view>-->
+  <view class="usermotto">
+    <text>{{motto}}</text><text>{{p1}}-{{p2}}</text>
+  </view>
+  <view class='userbtn'>
+        <button bindtap='bindViewTap'>选择图像</button>
+        <button bindtap="takePhoto">相机拍照</button>
+        <button bindtap="upload"> 开始检测 </button>
   </view>
 </view>
